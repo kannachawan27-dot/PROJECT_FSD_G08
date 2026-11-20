@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="G8 Bakery - Customize and pre-order beautiful cakes.">
+  <title>G8 Bakery | Sweet Moments</title>
+  <link rel="stylesheet" href="../CSS/G8.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a class="logo" href="#">G8<span>Bakery.</span></a>
+    <nav>
+      <a href="G8owner-login.html">Admin Dashboard</a>
+      <a href="#home">Home</a>
+      <a href="#cakes">Our Cakes</a>
+      <a href="#customize">Customize</a>
+      <a href="#booking">Pre-Order</a>
+    </nav>
+    <a href="#customize" class="nav-btn">Order Cake</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="eyebrow">FRESHLY BAKED · MADE WITH LOVE</span>
+        <h1>Every Celebration<br>Deserves a <span>Sweet Story.</span></h1>
+        <p>Beautiful handcrafted cakes, personalized just for you. Customize your cake and book your special date in advance.</p>
+        <a href="#customize" class="primary-btn">Create Your Cake →</a>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=900" alt="Beautiful celebration cake">
+      </div>
+    </section>
+
+    <section class="cakes-section" id="cakes">
+      <div class="section-heading">
+        <span class="eyebrow">OUR COLLECTION</span>
+        <h2>Made for Every Occasion</h2>
+        <p>Choose your favorite flavor to begin.</p>
+      </div>
+
+      <div class="cake-grid">
+        <article class="cake-card">
+          <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=600" alt="Chocolate cake">
+          <div class="cake-info">
+            <h3>Chocolate Truffle</h3>
+            <p>Rich chocolate, smooth and delicious.</p>
+            <span>From ₹650/kg</span>
+          </div>
+        </article>
+
+        <article class="cake-card">
+          <img src="https://images.unsplash.com/photo-1586788680434-30d324b2d46f?w=600" alt="Red velvet cake">
+          <div class="cake-info">
+            <h3>Red Velvet</h3>
+            <p>Classic red velvet with creamy frosting.</p>
+            <span>From ₹750/kg</span>
+          </div>
+        </article>
+
+        <article class="cake-card">
+          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600" alt="Fruit cake">
+          <div class="cake-info">
+            <h3>Mango Delight</h3>
+            <p>Fresh mango-inspired sweetness.</p>
+            <span>From ₹700/kg</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="customizer-section" id="customize">
+      <div class="section-heading">
+        <span class="eyebrow">YOUR CAKE, YOUR WAY</span>
+        <h2>Customize Your Cake</h2>
+        <p>Design your dream cake and see the price update instantly.</p>
+      </div>
+
+      <div class="customizer">
+        <div class="preview-panel">
+          <span class="eyebrow">LIVE CAKE PREVIEW</span>
+          <div class="cake-preview" id="cakePreview">
+            <div class="cake-tier top-tier"></div>
+            <div class="cake-tier bottom-tier"></div>
+            <div class="cake-base"></div>
+          </div>
+          <p id="previewCakeMessage" class="preview-cake-message">Your message appears here</p>
+          <div class="svg-preview-wrap">
+            <span class="eyebrow">EXPORTABLE CAKE SPECIFICATION</span>
+            <svg id="cakeSpecSvg" viewBox="0 0 520 360" role="img" aria-label="SVG cake design preview" xmlns="http://www.w3.org/2000/svg">
+              <title>G8 Bakery cake specification</title>
+              <ellipse cx="260" cy="310" rx="170" ry="22" fill="#ead8c8"/>
+              <rect x="125" y="205" width="270" height="100" rx="22" fill="#70432f" stroke="#563624" stroke-width="5"/>
+              <ellipse cx="260" cy="205" rx="135" ry="28" fill="#8b5a42" stroke="#563624" stroke-width="5"/>
+              <text x="260" y="270" text-anchor="middle" fill="#fff" font-size="18">Your cake</text>
+            </svg>
+            <button type="button" id="downloadCakeSvg" class="secondary-btn">Download cake design (SVG)</button>
+            <p class="svg-note">A scalable design specification you can print or share with the baker.</p>
+          </div>
+          <h3 id="previewFlavor">Chocolate Truffle</h3>
+          <p id="previewDetails">1 kg · Round · Classic</p>
+        </div>
+
+        <div class="options-panel">
+          <label for="weight">Cake Weight</label>
+          <select id="weight">
+            <option value="0.5">0.5 kg</option>
+            <option value="1" selected>1 kg</option>
+            <option value="1.5">1.5 kg</option>
+            <option value="2">2 kg</option>
+            <option value="3">3 kg</option>
+            <option value="4">4 kg</option>
+            <option value="5">5 kg</option>
+          </select>
+
+          <label for="flavor">Choose Flavor</label>
+          <select id="flavor">
+            <option value="chocolate">Chocolate Truffle</option>
+            <option value="redvelvet">Red Velvet</option>
+            <option value="mango">Mango</option>
+          </select>
+
+          <label for="shape">Cake Shape</label>
+          <select id="shape">
+            <option value="round">Round</option>
+            <option value="square">Square</option>
+            <option value="heart">Heart</option>
+          </select>
+
+          <label for="frosting">Frosting Color</label>
+          <select id="frosting">
+            <option value="#70432f">Chocolate Brown</option>
+            <option value="#f4a6b8">Pink</option>
+            <option value="#ffffff">White</option>
+            <option value="#a8c99b">Mint Green</option>
+          </select>
+
+          <label for="decoration">Fondant Decoration</label>
+          <select id="decoration">
+            <option value="0">No Extra Decoration</option>
+            <option value="150">Simple Decoration (+₹150)</option>
+            <option value="300">Premium Decoration (+₹300)</option>
+          </select>
+
+          <label for="message">Custom Cake Message</label>
+          <input id="message" type="text" maxlength="40" placeholder="Happy Birthday!">
+
+          <label for="cakePhoto">Upload Inspiration Photo (optional)</label>
+          <input id="cakePhoto" type="file" accept="image/*">
+          <div class="cake-photo-preview">
+            <img id="cakePhotoPreview" alt="Your cake inspiration preview" hidden>
+            <p id="cakePhotoHint">Choose a photo to preview your cake inspiration.</p>
+          </div>
+
+          <div class="price-box">
+            <span>Estimated Price</span>
+            <h2 id="totalPrice">₹650</h2>
+            <p id="priceBreakdown" class="price-breakdown">Choose a pickup date to check early-bird savings.</p>
+          </div>
+
+          <button type="button" class="primary-btn full-btn" id="bookingButton">
+            Continue to Booking →
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="booking-section" id="booking">
+      <div class="section-heading">
+        <span class="eyebrow">PLAN AHEAD</span>
+        <h2>Festival Pre-Booking</h2>
+        <p>Save your cake design, then reserve your pickup date.</p>
+      </div>
+
+      <div class="booking-form-card">
+        <p id="cakeDraftStatus" class="draft-status">First create your cake design above.</p>
+
+        <form id="festivalForm">
+          <label for="customerName">Customer Name</label>
+          <input type="text" id="customerName" placeholder="Enter your name" required>
+          <label for="customerPhone">Mobile Number</label>
+<input
+  type="tel"
+  id="customerPhone"
+  placeholder="Enter 10-digit mobile number"
+  maxlength="10"
+  minlength="10"
+  pattern="[6-9][0-9]{9}"
+  inputmode="numeric"
+  title="Enter a valid 10-digit Indian mobile number"
+  required
+>
+
+          <label for="festival">Festival / Occasion</label>
+          <select id="festival" required>
+            <option value="">Select Occasion</option>
+            <option>Diwali</option>
+            <option>Christmas</option>
+            <option>New Year</option>
+            <option>Birthday</option>
+            <option>Other</option>
+          </select>
+
+          <label for="pickupDate">Pickup Date</label>
+          <input type="date" id="pickupDate" required>
+
+          <label for="pickupTime">Pickup Time</label>
+          <select id="pickupTime" required>
+            <option value="">Select Time</option>
+            <option>10 AM - 12 PM</option>
+            <option>12 PM - 2 PM</option>
+            <option>2 PM - 4 PM</option>
+            <option>4 PM - 6 PM</option>
+          </select>
+          
+
+
+          <button type="submit" class="primary-btn full-btn">Confirm Festival Booking</button>
+        </form>
+
+        <div id="bookingMessage" role="status" aria-live="polite"></div>
+        <div id="receiptArea" class="receipt-area" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="#">G8<span>Bakery.</span></a>
+    <p>Freshly baked happiness for every celebration.</p>
+    <p>© 2026 G8 Bakery. All rights reserved.</p>
+  </footer>
+
+  <script src="../JS/G8.js"></script>
+</body>
+</html>

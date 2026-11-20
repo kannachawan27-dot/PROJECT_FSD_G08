@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G8 Bakery | Admin Dashboard</title>
+    <link rel="stylesheet" href="../CSS/G8.css">
+</head>
+
+<body>
+
+    <section class="admin-dashboard">
+
+        <h2>G8 Bakery Admin Dashboard</h2>
+        <p>Manage your bakery bookings</p>
+
+        <div class="dashboard-cards">
+
+            <div class="dashboard-card">
+                <h3>Total Orders</h3>
+                <h2 id="totalOrders">0</h2>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>Today's Orders</h3>
+                <h2 id="todayOrders">0</h2>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>Daily Capacity</h3>
+                <h2>25 Cakes</h2>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>Available Capacity Today</h3>
+                <h2 id="availableCapacity">25</h2>
+            </div>
+
+        </div>
+
+        <h3>Festival Booking Management</h3>
+        <h3>Ingredient Forecaster</h3>
+
+<div class="dashboard-cards">
+    <div class="dashboard-card">
+        <h3>Required Flour</h3>
+        <h2 id="requiredFlour">0 g</h2>
+    </div>
+
+    <div class="dashboard-card">
+        <h3>Required Sugar</h3>
+        <h2 id="requiredSugar">0 g</h2>
+    </div>
+
+    <div class="dashboard-card">
+        <h3>Required Butter</h3>
+        <h2 id="requiredButter">0 g</h2>
+    </div>
+
+    <div class="dashboard-card">
+        <h3>Required Cream</h3>
+        <h2 id="requiredCream">0 g</h2>
+    </div>
+    <div class="dashboard-card">
+        <h3>Required Cocoa</h3>
+        <h2 id="requiredCocoa">0 g</h2>
+    </div>
+    <div class="dashboard-card">
+        <h3>Required Mango Purée</h3>
+        <h2 id="requiredMango">0 g</h2>
+    </div>
+</div>
+<p class="forecast-note">Ingredient estimates use separate sample bills of materials (BOM) for each flavor and include a 5% preparation buffer. Confirm quantities against your bakery's tested recipes before purchasing.</p>
+
+        <div class="booking-table-container">
+
+            <!-- Search and Filters -->
+            <div class="admin-filters">
+              <button type="button" id="exportOrders" class="order-action-btn">
+    Export Orders
+</button>
+
+                <input
+                    type="date"
+                    id="dateFilter"
+                >
+
+                <input
+                    type="text"
+                    id="searchOrder"
+                    placeholder="Search customer name..."
+                >
+
+                <select id="statusFilter">
+                    <option value="All">All Orders</option>
+                    <option value="Confirmed">Confirmed</option>
+                    <option value="Accepted">Accepted</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select>
+
+            </div>
+
+            <!-- Booking Table -->
+            <table class="booking-table">
+
+                <thead>
+                    <tr>
+                        <th>Customer</th>
+                        <th>Mobile Number</th>
+                        <th>Festival</th>
+                        <th>Pickup Date</th>
+                        <th>Pickup Time</th>
+                        <th>Cake</th>
+                        <th>Weight</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="bookingTableBody">
+                    <tr>
+                        <td colspan="10">No bookings yet</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <section class="purchase-order-panel">
+            <h3>Supplier Purchase Order</h3>
+            <p>Generate a printable ingredient purchase order from active bookings. Use the browser print dialog and choose “Save as PDF”.</p>
+            <button type="button" id="generatePurchaseOrder" class="order-action-btn">Generate Supplier Purchase Order</button>
+            <div id="purchaseOrderPreview"></div>
+        </section>
+
+        <a href="index.html">Back to Customer Website</a>
+        <button type="button" id="adminLogout">Logout</button>
+
+    </section>
+
+    <script src="../JS/G8owner.js"></script>
+
+</body>
+</html>

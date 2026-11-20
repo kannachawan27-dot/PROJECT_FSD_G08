@@ -1,0 +1,15 @@
+{
+  "name": "g8-bakery",
+  "version": "2.1.0",
+  "private": true,
+  "description": "G8 Bakery CrumbCraft cake customization, SVG design export and festival booking platform",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "create-admin": "node scripts/create-admin.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}

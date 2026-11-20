@@ -1,0 +1,12 @@
+'use strict';
+const readline = require('node:readline/promises');
+const { stdin:input, stdout:output } = require('node:process');
+const { DatabaseSync } = require('node:sqlite');
+const crypto = require('node:crypto');
+const path = require('node:path');
+const fs = require('node:fs');
+const dbPath = path.join(__dirname,'..','data','g8-bakery.sqlite');
+fs.mkdirSync(path.dirname(dbPath),{recursive:true});
+const db = new DatabaseSync(dbPath);
+db.exec('CREATE TABLE IF NOT EXISTS admins (id INTEGER PRIMARY KEY, username TEXT NOT NULL UNIQUE, password_hash TEXT NOT NULL, salt TEXT NOT NULL, created_at TEXT NOT NULL)');
+(async()=>{const rl=readline.createInterface({input,output});try{const username=(await rl.question('New admin username: ')).trim();const password=await rl.question('New admin password (minimum 12 characters): ');if(!/^[a-zA-Z0-9_.-]{3,60}$/.test(username))throw Error('Username must be 3-60 letters, numbers, dots, underscores or hyphens.');if(password.length<12||password.length>200)throw Error('Password must contain 12-200 characters.');const salt=crypto.randomBytes(16).toString('hex');const hash=crypto.scryptSync(password,salt,64).toString('hex');db.prepare('INSERT INTO admins(username,password_hash,salt,created_at) VALUES(?,?,?,?)').run(username,hash,salt,new Date().toISOString());console.log('Admin account created. Keep your password private.');}catch(e){console.error(e.message);process.exitCode=1;}finally{rl.close();db.close();}})();

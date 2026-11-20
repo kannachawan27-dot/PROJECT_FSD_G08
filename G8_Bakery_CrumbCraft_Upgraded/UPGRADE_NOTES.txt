@@ -1,0 +1,24 @@
+G8 BAKERY / CRUMBCRAFT — UPGRADE NOTES (v2.1.0)
+
+What changed:
+1. Added a live SVG cake specification and SVG download.
+2. Replaced the old generic ingredient total with flavor-specific sample BOM estimates and a 5% buffer.
+3. Made the 25-booking daily capacity check atomic with a SQLite IMMEDIATE transaction.
+4. Added login throttling after five failed attempts in a 15-minute window.
+5. Added strict real-calendar date checks and frosting allow-list validation.
+6. Added valid order-status transition checks.
+7. Added structured JSON server event logs and additional response security headers.
+8. Added architecture notes and an innovation/demo checklist.
+9. Expanded integration/security tests.
+
+Verification performed:
+- Node syntax checks passed for server.js, JS/G8.js and JS/G8owner.js.
+- `npm test`: 7 test groups passed, 0 failed.
+- HTTP smoke checks: customer page, CSS, customer JS and admin dashboard returned HTTP 200.
+- Verified SVG download control is present in served customer HTML.
+
+Important:
+- A 100/100 evaluation cannot be guaranteed. Final marks depend on the evaluator and live demonstration.
+- The ingredient BOM numbers are sample estimates. Confirm them against actual bakery recipes before buying ingredients.
+- Browser-based interactive testing could not be completed in this environment; use the included demo checklist before presenting.
+- See TXT/README.txt for installation, admin setup and deployment instructions.
